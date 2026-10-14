@@ -6,9 +6,9 @@
 }
 
 :root {
-  --navy: #040a3a;
-  --board: #0a1f9c;
-  --board-hi: #1d3fd0;
+  --navy: #03063a;
+  --board: #060ce9;
+  --board-hi: #1a2ee6;
   --gold: #f5c542;
   --gold-deep: #c8860a;
   --red: #e0211b;
@@ -28,7 +28,7 @@
 /* --------------------------------------------------------------- editor */
 .ed-back {
   position: fixed; inset: 0; z-index: 1000;
-  background: #030830;
+  background: #03063a;
   display: flex; align-items: flex-start; justify-content: center;
   overflow: auto; -webkit-overflow-scrolling: touch;
   font-family: var(--text); color: #fff;

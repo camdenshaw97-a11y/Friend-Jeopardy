@@ -595,7 +595,7 @@ function ddWager(room, pid, amount) {
   snapshot(room);
   g.dd.wager = w;
   g.phase = 'ddAnswer';
-  g.answerEndsAt = null;
+  g.answerEndsAt = Date.now() + ANSWER_SECS * 1000;   // the answer clock starts once the wager is in
   fx(room, 'ddWager', { name: pname(room, pid), wager: w, allIn: w === g.dd.max && w > roundMax(g) });
 }
 
@@ -787,7 +787,7 @@ function publicState(room) {
       cur: g.cur ? { cat: g.cur.cat, row: g.cur.row, value: q.value, category: g.board[g.cur.cat].name, text: showClue ? q.c : null, dd: !!q.dd } : null,
       open: g.open, buzzed: g.buzzed, tried: g.tried,
       windowLeft: g.phase === 'buzz' && g.windowEndsAt ? Math.max(0, g.windowEndsAt - Date.now()) : null,
-      answerLeft: g.phase === 'answer' && g.answerEndsAt ? Math.max(0, g.answerEndsAt - Date.now()) : null,
+      answerLeft: (g.phase === 'answer' || g.phase === 'ddAnswer') && g.answerEndsAt ? Math.max(0, g.answerEndsAt - Date.now()) : null,
       result: g.result,                               // includes the response once a clue is over
       dd: g.dd ? { pid: g.dd.pid, max: g.dd.max, min: DD_MIN, wager: g.phase === 'ddAnswer' || g.phase === 'reveal' ? g.dd.wager : null } : null,
       final: null, winner: g.winner, note: g.note || null,

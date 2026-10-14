@@ -6,6 +6,25 @@ glance which version a screen is running.
 
 Times are Pacific.
 
+## 1.1 · October 13, 2026, 9:50 pm
+
+**Fixes from the first play test**
+- **Typing on Android phones works.** The buzzer was swallowing every touch in the play area, which
+  on Samsung phones stopped the wager box and the Final answer box from taking focus. Players can
+  now type any Daily Double wager (the quick buttons are still there) and type their Final answer.
+- **The host sees the answer clock.** While someone is answering (after a buzz, or after a Daily
+  Double wager is in) a 5-second countdown shows on the host's phone next to Correct / Wrong. The
+  host still decides; the clock is a guide. The TV's five bars count it down too.
+- **Board values fit their tiles**: smaller, with a bevelled gold look.
+
+**A look of its own**
+- The TV and the phones no longer share Friend Feud's look. Pure blue tiles in a black grid, gold
+  bevelled dollar values, white condensed category names with hard black shadows, a white serif
+  clue, blue podiums in black frames, square edges everywhere, and a dark stage with soft light
+  beams instead of the starburst. The Daily Double splash is white on blue. The buzz-window and
+  answer lights are white, like podium lights.
+- The Final clock sits at the top left so it never covers the join code.
+
 ## 1.0 · October 13, 2026
 
 **The first version**

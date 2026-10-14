@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Promo stage</title>
+<style>
+  @font-face { font-family: 'Anton'; src: url('/anton.woff2') format('woff2'); }
+  :root { --gold: #f5c542; --display: 'Anton', 'Impact', sans-serif; --text: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+  html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #010314; font-family: var(--text); color: #fff; }
+  #bg { position: absolute; inset: 0; background: radial-gradient(ellipse 120% 80% at 50% 110%, #0b1cc0 0%, #060d7a 35%, #03063a 70%, #010314 100%); }
+  #bg::before { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, transparent 20%, #3b55ff18 30%, transparent 38%), linear-gradient(80deg, transparent 58%, #3b55ff14 68%, transparent 76%); }
+  #bg::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 160px; background: linear-gradient(#000a, transparent); }
+  .dust i { position: absolute; width: 4px; height: 4px; border-radius: 50%; background: #ffffff55; animation: drift 14s linear infinite; }
+  @keyframes drift { from { transform: translateY(0); opacity: 0; } 10%, 90% { opacity: 1; } to { transform: translateY(-120px); opacity: 0; } }
+
+  /* the screens */
+  .screen { position: absolute; transition: opacity .5s, transform .6s cubic-bezier(.2, .9, .3, 1); opacity: 0; transform: translateY(20px); }
+  .screen.on { opacity: 1; transform: none; }
+  .screen:not(.on) { pointer-events: none; }
+  .screen label { position: absolute; left: 0; top: -40px; font: 400 24px var(--display); letter-spacing: .18em; color: var(--gold); text-shadow: 2px 2px 0 #000; }
+  .tvframe { position: absolute; inset: 0; border-radius: 10px; background: #000; box-shadow: 0 0 0 10px #0d1150, 0 0 0 14px #000, 0 30px 90px #000d; overflow: hidden; }
+  .tvframe iframe { display: block; border: 0; width: 1920px; height: 1080px; transform-origin: 0 0; }
+  .phoneframe { position: absolute; inset: 0; border-radius: 46px; background: #000; padding: 14px; box-sizing: border-box; box-shadow: 0 0 0 4px #1b2254, 0 0 0 6px #000, 0 30px 70px #000d; overflow: hidden; }
+  .phoneframe::before { content: ""; position: absolute; left: 50%; top: 14px; width: 120px; height: 28px; margin-left: -60px; border-radius: 14px; background: #000; z-index: 2; }
+  .phoneframe iframe { display: block; border: 0; width: 390px; height: 780px; border-radius: 34px; transform-origin: 0 0; background: #03063a; }
+
+  #tv { left: 352px; top: 110px; width: 1216px; height: 684px; }
+  #tv.left { left: 110px; }
+  #tv.right { left: 594px; }
+  #tv iframe { transform: scale(0.6333); }
+  #phone, #hphone { width: 390px; height: 780px; top: 70px; }
+  #phone { left: 1430px; }
+  #hphone { left: 110px; }
+  #phone.big, #hphone.big { transform: scale(1.1); }
+  .phonewrap { position: absolute; inset: 0; transform: scale(0.95); transform-origin: 0 0; }
+
+  /* captions */
+  #cap { position: absolute; left: 0; right: 0; top: 850px; text-align: center; transition: opacity .3s; pointer-events: none; }
+  #cap.off { opacity: 0; }
+  #cap b { display: block; font: 400 84px/1.05 var(--display); letter-spacing: .03em; color: #fff; text-shadow: 5px 5px 0 #000, 0 0 40px #2a44ff66; }
+  #cap b em { font-style: normal; color: var(--gold); }
+  #cap span { display: block; margin-top: 14px; font: 600 34px var(--text); color: #d5deff; text-shadow: 0 2px 0 #000; }
+
+  /* title cards */
+  #title { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 40px; transition: opacity .5s; pointer-events: none; }
+  #title.off { opacity: 0; pointer-events: none; }
+  .badge { display: inline-block; padding: 34px 120px 28px; border-radius: 6px; background: linear-gradient(#2038e8, #0a16b8 55%, #070f80); box-shadow: 0 0 0 5px #000, 0 0 0 7px #6b7fff, 0 0 100px #2a44ff66, inset 0 0 0 2px #7f90ff44, inset 0 -24px 50px #0007; animation: badgeIn .8s cubic-bezier(.3, 1.35, .5, 1) backwards; }
+  .badge b { display: inline-block; font: 400 170px/1 var(--display); letter-spacing: .06em; color: #fff; transform: skewX(-7deg); text-shadow: 7px 7px 0 #000, 0 0 30px #5f74ff88; }
+  @keyframes badgeIn { from { opacity: 0; transform: scale(.5); } }
+  #title h2 { margin: 0; font: 400 76px/1.1 var(--display); letter-spacing: .05em; color: var(--gold); text-shadow: 5px 5px 0 #000; text-align: center; animation: rise .6s .3s ease-out backwards; }
+  #title p { margin: 0; font: 600 36px var(--text); color: #d5deff; text-shadow: 0 2px 0 #000; animation: rise .6s .5s ease-out backwards; }
+  @keyframes rise { from { opacity: 0; transform: translateY(20px); } }
+  #title .url { margin-top: 10px; font: 400 54px var(--display); letter-spacing: .06em; color: #fff; padding: 14px 40px 10px; border-radius: 6px; background: #060ce9; box-shadow: 0 0 0 4px #000; text-shadow: 3px 3px 0 #000; animation: rise .6s .7s ease-out backwards; }
+</style>
+</head>
+<body>
+<div id="bg"></div>
+<div class="dust" id="dust"></div>
+
+<div class="screen" id="tv"><label>THE TV</label><div class="tvframe"><iframe id="tvf" src="about:blank" allow="screen-wake-lock"></iframe></div></div>
+<div class="screen" id="phone"><label>TESSA’S PHONE</label><div class="phonewrap"><div class="phoneframe"><iframe id="pf" src="about:blank" allow="screen-wake-lock"></iframe></div></div></div>
+<div class="screen" id="hphone"><label>THE HOST’S PHONE</label><div class="phonewrap"><div class="phoneframe"><iframe id="hf" src="about:blank" allow="screen-wake-lock"></iframe></div></div></div>
+
+<div id="cap" class="off"><b></b><span></span></div>
+<div id="title"><span class="badge"><b>FRIEND JEOPARDY</b></span><h2>THE BOARD ON YOUR TV.<br>THE BUZZER IN YOUR POCKET.</h2><p></p></div>
+
+<script>
+  (function () {
+    var d = document.getElementById('dust');
+    for (var i = 0; i < 40; i++) { var s = document.createElement('i'); s.style.left = Math.random() * 1920 + 'px'; s.style.top = (200 + Math.random() * 900) + 'px'; s.style.animationDelay = (-Math.random() * 14) + 's'; s.style.animationDuration = (10 + Math.random() * 10) + 's'; d.appendChild(s); }
+  })();
+  // Called by the recording script.
+  window.stage = {
+    cap: function (big, small) { var c = document.getElementById('cap'); if (!big) { c.classList.add('off'); return; } c.querySelector('b').innerHTML = big; c.querySelector('span').textContent = small || ''; c.classList.remove('off'); },
+    title: function (on, h2, p, url) {
+      var t = document.getElementById('title');
+      if (h2 != null) t.querySelector('h2').innerHTML = h2;
+      if (p != null) t.querySelector('p').textContent = p;
+      var u = t.querySelector('.url'); if (url) { if (!u) { u = document.createElement('div'); u.className = 'url'; t.appendChild(u); } u.textContent = url; } else if (u) u.remove();
+      t.classList.toggle('off', !on);
+    },
+    show: function (ids, layout) {
+      ['tv', 'phone', 'hphone'].forEach(function (id) { document.getElementById(id).classList.toggle('on', ids.indexOf(id) >= 0); });
+      var tv = document.getElementById('tv'); tv.classList.remove('left', 'right'); if (layout) tv.classList.add(layout);
+    }
+  };
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>{{TITLE}}</title>
+<meta name="description" content="A 100-second look at Friend Jeopardy. All it takes is a TV and everybody’s phone.">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="Friend Jeopardy">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="A 100-second look at the game. The board on your TV, the buzzer in your pocket.">
+<meta property="og:url" content="{{HERE}}">
+<meta property="og:image" content="{{HERE}}/poster.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:video" content="{{HERE}}/video.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1920">
+<meta property="og:video:height" content="1080">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#03063a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a1f9c'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-family='Impact,Arial Narrow,sans-serif' font-size='40' fill='%23f5c542'%3E$%3C/text%3E%3C/svg%3E">
+<style>
+  @font-face { font-family: 'Anton'; src: url('/anton.woff2') format('woff2'); font-display: swap; }
+  :root { --gold: #f5c542; --display: 'Anton', 'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif; --text: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+  * { box-sizing: border-box; }
+  html { background: #010314; }
+  html, body { margin: 0; min-height: 100%; }
+  body { font-family: var(--text); color: #fff; display: flex; flex-direction: column; align-items: center; padding: max(22px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom)); overflow-x: hidden; }
+  body::after { content: ""; position: fixed; inset: 0; z-index: -2; background: radial-gradient(ellipse 120% 80% at 50% 110%, #0b1cc0 0%, #060d7a 35%, #03063a 70%, #010314 100%); }
+  body::before { content: ""; position: fixed; inset: 0; z-index: -1; background: linear-gradient(100deg, transparent 20%, #3b55ff18 30%, transparent 38%), linear-gradient(80deg, transparent 58%, #3b55ff14 68%, transparent 76%); }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  .badge { display: inline-block; margin: 10px 0 clamp(20px, 4.5vw, 34px); padding: .22em .7em .16em; border-radius: .08em; font: 400 clamp(34px, 8.6vw, 62px)/1 var(--display); letter-spacing: .06em; white-space: nowrap; background: linear-gradient(#2038e8, #0a16b8 55%, #070f80); box-shadow: 0 0 0 .05em #000, 0 0 0 .08em #6b7fff, 0 0 .7em #2a44ff66; animation: rise .5s ease-out backwards; }
+  .badge b { display: inline-block; transform: skewX(-7deg); font-weight: 400; text-shadow: .06em .06em 0 #000; }
+  .frame { width: min(100%, 1040px, max(480px, calc((100vh - 350px) * 16 / 9))); border-radius: 6px; overflow: hidden; background: #000; line-height: 0; box-shadow: 0 0 0 4px #000, 0 0 0 6px #3b4ad0, 0 18px 44px #000a; animation: rise .5s .1s ease-out backwards; }
+  video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000 center / cover no-repeat; }
+  h1 { margin: clamp(24px, 5vw, 40px) 0 0; text-align: center; font: 400 clamp(30px, 7.4vw, 60px)/1.05 var(--display); letter-spacing: .03em; color: var(--gold); text-shadow: .06em .06em 0 #000; animation: rise .5s .2s ease-out backwards; }
+  p { margin: 12px 0 0; text-align: center; font-size: clamp(16px, 3.6vw, 21px); line-height: 1.4; color: #d5deff; max-width: 34em; animation: rise .5s .28s ease-out backwards; }
+  small { display: block; margin-top: clamp(26px, 6vw, 44px); text-align: center; font-size: 12px; line-height: 1.5; color: #8e9fe0; animation: rise .5s .36s ease-out backwards; }
+</style>
+</head>
+<body>
+  <span class="badge"><b>FRIEND JEOPARDY</b></span>
+  <div class="frame">
+    <video controls playsinline preload="metadata" poster="{{PATH}}/poster.jpg">
+      <source src="{{PATH}}/video.mp4" type="video/mp4">
+      Your browser can’t play this video here. <a href="{{PATH}}/video.mp4">Open the video file</a> instead.
+    </video>
+  </div>
+  <h1>{{HEAD}}</h1>
+  <p>The board goes on the TV. Everybody’s phone is their buzzer. One person hosts from theirs. That’s the whole setup.</p>
+  <small>Sound on. The video is about a minute and a half.</small>
+</body>
+</html>

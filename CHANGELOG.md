@@ -6,6 +6,22 @@ glance which version a screen is running.
 
 Times are Pacific.
 
+## 1.2 · October 13, 2026, 10:45 pm
+
+**A walkthrough video, on its own page**
+- A 100-second video of a game played start to finish (joining, picking, buzzing, a wrong
+  answer, a Daily Double, Double, Final and the reveal) with captions and music, made the same
+  way as Friend Feud's: the real pages, recorded on a stage with the TV and a phone side by side.
+  All the music and sounds are synthesized, so there is nothing to license.
+- **The page is unlisted**: nothing in the game links to it, the address ends in a random code,
+  and it asks search engines not to list it. Pasting the link into a text or an email shows a
+  preview picture. The address is `/video-clwhrautxw` on the site.
+- The video is sent in pieces as the viewer watches or skips around, so it plays on iPhones.
+- The scripts that make the video are in `tools/promo` (see the README there), so it can be
+  re-recorded after the game changes.
+- Small fix: a screen embedded in another page (as in the recording) no longer stops working
+  because it is not allowed to keep the screen awake.
+
 ## 1.1 · October 13, 2026, 9:50 pm
 
 **Fixes from the first play test**

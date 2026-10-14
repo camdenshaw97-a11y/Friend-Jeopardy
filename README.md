@@ -107,6 +107,12 @@ All the sound effects are synthesized in the browser, so there are no audio file
   unless you add a file named `lobby.mp3`. Only add music you have the right to use; if it
   needs a credit, put it in `F.MUSIC_CREDIT` at the top of `common.js`.
 
+## The walkthrough video
+
+There is a video of a whole game on an unlisted page: `YOUR-SITE/video-clwhrautxw`. Send the link
+to anyone; it plays in the browser, on phones too, and shows a preview picture when pasted into
+a text. To re-record it after the game changes, see `tools/promo/README.md`.
+
 ## What changed, and when
 
 See [CHANGELOG.md](CHANGELOG.md). The version number on the TV start screen and the phone join

@@ -6,7 +6,7 @@
   // Change this to rename the game everywhere.
   F.TITLE = 'FRIEND JEOPARDY';
   // Shown small on the start screens. Goes up with every change; CHANGELOG.md says what each one was.
-  F.VERSION = '1.1';
+  F.VERSION = '1.2';
   // Shown in the TV lobby while lobby.mp3 is playing (if you add one). Leave empty for no credit line.
   F.MUSIC_CREDIT = '';
 
@@ -93,7 +93,7 @@
     var lock = null;
     function ask() {
       if (!navigator.wakeLock || document.hidden) return;
-      navigator.wakeLock.request('screen').then(function (l) { lock = l; }).catch(function () {});
+      try { navigator.wakeLock.request('screen').then(function (l) { lock = l; }).catch(function () {}); } catch (e) { /* not allowed here (an embedded page, say) */ }
     }
     ask();
     document.addEventListener('visibilitychange', function () { if (!document.hidden) ask(); });

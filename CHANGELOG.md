@@ -6,6 +6,27 @@ glance which version a screen is running.
 
 Times are Pacific.
 
+## 1.3 · October 17, 2026
+
+**More than twice the clues**
+- 96 new categories (480 clues) and 30 new Final clues, spread over every pack. There are now
+  174 categories and 48 Finals in all; every pack has enough for at least two full games before
+  anything repeats, and General has enough for two and a half.
+- **Late Night** went from 4 categories to 18, and got raunchier: dating apps, bachelor parties,
+  bar calls, innuendo, "Before & After Dark." Still nothing graphic.
+- **Puns, like the show.** Every category has a pun or wordplay name now ("BORED GAMES",
+  "JURASSIC LARK", "GOD SAVE THE QUIZ"), plus the show's classic formats: Before & After, hidden
+  words, palindromes, homophones, "Crossword clues 'Q'".
+- The new categories are added after the old ones, so the TV still remembers which of the
+  originals you've already played.
+
+**Fixes**
+- The anagram clue said NIGHT rearranges into THIGH. It doesn't; it now asks for THING.
+- A Final clue said London is the only city to host the Summer Olympics three times. Paris
+  joined it in 2024; the clue now asks for the first city to do it.
+- A Final clue called the tongue the only muscle attached at one end, which isn't true. It now
+  asks for the only bone not connected to any other bone (the hyoid).
+
 ## 1.2 · October 13, 2026, 10:45 pm
 
 **A walkthrough video, on its own page**

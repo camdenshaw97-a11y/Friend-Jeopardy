@@ -6,6 +6,19 @@ glance which version a screen is running.
 
 Times are Pacific.
 
+## 1.4 · October 17, 2026
+
+**Much harder clues**
+- Every clue in every pack was rewritten at real-show difficulty: the top row is something a
+  sharp adult knows, the bottom row is a genuine stumper ("The only bone not connected to any
+  other bone", "The only man to win the calendar-year Grand Slam twice"). No more "what color
+  is a banana."
+- The 46 Final clues are all hard trivia now, the kind you'd bet on and sweat.
+- Same 174 pun-named categories, and Late Night keeps its humor; the clues behind them are new.
+- Because every clue is new, the TV forgets which categories you've played: everything is
+  fresh again.
+- The extra clue file is folded back into `clues.js`.
+
 ## 1.3 · October 17, 2026
 
 **More than twice the clues**

@@ -6,7 +6,7 @@
   // Change this to rename the game everywhere.
   F.TITLE = 'FRIEND JEOPARDY';
   // Shown small on the start screens. Goes up with every change; CHANGELOG.md says what each one was.
-  F.VERSION = '1.3';
+  F.VERSION = '1.4';
   // Shown in the TV lobby while lobby.mp3 is playing (if you add one). Leave empty for no credit line.
   F.MUSIC_CREDIT = '';
 
